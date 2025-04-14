@@ -27,3 +27,17 @@ INSERT INTO students (first_name, last_name, age, grade, course, email, dob, blo
 SELECT email as "Student Email" from students
 
 SELECT * FROM students ORDER BY dob DESC;
+
+SELECT country from students ORDER BY country ASC;
+
+SELECT DISTINCT country from students;
+SELECT DISTINCT blood_group from students;
+
+select * from students 
+WHERE country = 'USA';
+
+SELECT * from students 
+WHERE grade = 'A-' AND course = 'Physics'
+
+SELECT * FROM students
+WHERE (country = 'USA' OR country = 'Brazil') AND age >10
