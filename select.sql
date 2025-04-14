@@ -57,3 +57,16 @@ SELECT * from students
 where email is NOT NULL;
 
 SELECT COALESCE(email, 'Email not provided') as "Email" from students;
+
+SELECT * FROM students
+WHERE country = 'USA' or country = 'India';
+SELECT * FROM students
+WHERE country NOT in ('USA', 'Brazil', 'India');
+SELECT * from students
+WHERE age BETWEEN 10 and 20 ORDER BY age;
+SELECT * FROM students 
+WHERE first_name LIKE '%ia';
+SELECT * FROM students 
+WHERE first_name LIKE '__a%';
+SELECT * FROM students 
+WHERE first_name LIKE 'A%';
