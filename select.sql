@@ -49,4 +49,11 @@ SELECT avg(age) FROM students;
 SELECT max(age) FROM students;
 SELECT min(age) FROM students;
 SELECT count(*) FROM students;
-SELECT max(length(first_name)) from students
+SELECT max(length(first_name)) from students;
+SELECT * from students 
+WHERE not country = 'USA'
+
+SELECT * from students
+where email is NOT NULL;
+
+SELECT COALESCE(email, 'Email not provided') as "Email" from students;
