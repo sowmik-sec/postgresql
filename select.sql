@@ -76,3 +76,7 @@ SELECT * FROM students;
 
 DELETE from students
 WHERE student_id=3;
+
+UPDATE students
+set last_name = 'Willis', age = 26
+WHERE student_id = 1;
