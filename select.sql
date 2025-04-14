@@ -70,3 +70,9 @@ SELECT * FROM students
 WHERE first_name LIKE '__a%';
 SELECT * FROM students 
 WHERE first_name LIKE 'A%';
+
+SELECT * FROM students LIMIT 5 OFFSET 3;
+SELECT * FROM students;
+
+DELETE from students
+WHERE student_id=3;
