@@ -41,3 +41,12 @@ WHERE grade = 'A-' AND course = 'Physics'
 
 SELECT * FROM students
 WHERE (country = 'USA' OR country = 'Brazil') AND age >10
+
+SELECT upper(first_name) as first_name_in_upper_case, * from students;
+SELECT concat(first_name, ' ', last_name) FROM students;
+SELECT length(first_name) from students;
+SELECT avg(age) FROM students;
+SELECT max(age) FROM students;
+SELECT min(age) FROM students;
+SELECT count(*) FROM students;
+SELECT max(length(first_name)) from students
