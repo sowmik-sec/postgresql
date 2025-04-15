@@ -22,3 +22,10 @@ INSERT INTO employees (employee_name, department_name, salary, hire_date) VALUES
 SELECT * FROM employees
 WHERE salary > (SELECT max(salary) from employees
 WHERE department_name='Marketing');
+
+SELECT *,(SELECT sum(salary) from employees) from employees;
+
+SELECT department_name, sum(salary) from employees
+GROUP BY department_name;
+
+select * from (SELECT department_name, sum(salary) from employees GROUP BY department_name) as sum_dept_salary;
