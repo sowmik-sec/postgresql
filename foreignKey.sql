@@ -32,3 +32,14 @@ SELECT * from post;
 
 SELECT post.id as postId, "user".id, title, username from post
 JOIN "user" on post.user_id = "user".id;
+
+SELECT * from "user"
+join post on post.user_id = "user".id;
+
+INSERT INTO post(id, title, user_id) VALUES
+(5, 'This is a test post title!', NULL);
+
+SELECT * from post
+left join "user" on post.user_id = "user".id;
+SELECT * from post
+right join "user" on post.user_id = "user".id;
