@@ -42,3 +42,16 @@ JOIN departments USING(department_id);
 SELECT department_name, round(avg(salary)) as avg_salary from employees
 JOIN departments USING(department_id)
 GROUP BY department_name;
+
+SELECT department_name, count(*) as employee_count from employees
+JOIN departments USING(department_id)
+GROUP BY department_name;
+
+SELECT department_name, round(avg(salary)) as avg_salary from employees
+JOIN departments USING(department_id)
+GROUP BY department_name
+ORDER BY avg_salary DESC
+LIMIT 1;
+
+SELECT extract(YEAR from hire_date) as hire_year, count(*) as hired from employees
+GROUP BY hire_year;
