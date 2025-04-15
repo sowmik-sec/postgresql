@@ -55,3 +55,29 @@ LIMIT 1;
 
 SELECT extract(YEAR from hire_date) as hire_year, count(*) as hired from employees
 GROUP BY hire_year;
+
+DROP TABLE if EXISTS orders;
+CREATE Table orders(
+    order_id SERIAL PRIMARY KEY,
+    customer_id INT,
+    order_date DATE,
+    total_amount DECIMAL(10,2)
+);
+INSERT INTO orders (customer_id, order_date, total_amount) VALUES
+(101, '2023-01-15', 250.75),
+(102, '2022-02-20', 120.00),
+(103, '2021-03-05', 540.30),
+(101, '2022-04-12', 310.90),
+(104, '2020-05-10', 75.50),
+(105, '2021-06-18', 990.00),
+(102, '2020-07-22', 150.45),
+(106, '2022-08-01', 430.00),
+(107, '2020-09-15', 220.85),
+(101, '2019-10-20', 660.10);
+
+SELECT customer_id, count(customer_id), sum(total_amount) as total_spent from orders
+GROUP BY customer_id
+HAVING count(customer_id)>2;
+SELECT extract(MONTH from order_date) as month, sum(total_amount) from orders
+WHERE extract(YEAR from order_date) = 2022
+GROUP BY month
