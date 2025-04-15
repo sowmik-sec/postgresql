@@ -7,11 +7,13 @@ CREATE TABLE "user"(
 CREATE Table post(
     id SERIAL PRIMARY KEY,
     title TEXT NOT NULL,
-    user_id INTEGER REFERENCES "user"(id) NOT NULL
+    user_id INTEGER REFERENCES "user"(id) on delete set DEFAULT DEFAULT 2
 );
 ALTER Table post
 alter COLUMN user_id set NOT NULL;
 
+drop Table "user";
+DROP Table post;
 
 INSERT INTO "user"(username) VALUES
 ('akash'),
@@ -23,6 +25,6 @@ INSERT INTO post(title, user_id) VALUES
 ('Batash just shared a amazing recipe!',1),
 ('Exploring adventures with Sagor', 4),
 ('Nodi''s wisdom always leaves me inspired.',4);
-SELECT title, username from post
-JOIN "user"
-WHERE "user.id" = post.user_id;
+DELETE from "user"
+where id = 2;
+SELECT * from post;
