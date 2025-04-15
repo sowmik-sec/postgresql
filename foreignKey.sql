@@ -27,4 +27,8 @@ INSERT INTO post(title, user_id) VALUES
 ('Nodi''s wisdom always leaves me inspired.',4);
 DELETE from "user"
 where id = 2;
+SELECT * from "user";
 SELECT * from post;
+
+SELECT post.id as postId, "user".id, title, username from post
+JOIN "user" on post.user_id = "user".id;
