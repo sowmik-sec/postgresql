@@ -43,3 +43,6 @@ SELECT * from post
 left join "user" on post.user_id = "user".id;
 SELECT * from post
 right join "user" on post.user_id = "user".id;
+
+SELECT * from post
+FULL OUTER join "user" on post.user_id = "user".id;
